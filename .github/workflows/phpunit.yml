@@ -9,11 +9,11 @@ jobs:
     - uses: actions/checkout@v2
 
     - name : Update composer
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: make
 
     - name: phpunit
       id: phpunit
-      run: vendor/bin/phpunit
+      run: make test
 
     - name: Discord notify
       if: steps.phpunit > 0
