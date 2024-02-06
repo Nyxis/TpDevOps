@@ -32,3 +32,13 @@ jobs:
         subject: ${{ steps.phpunit.outcome == 'success' && 'Build Success' || 'Build Fail' }}
         body: ${{ job.status }}
         to: ${{ secrets.DEST_EMAIL }}
+
+    - name: Deploy on PlatformSh
+      if: steps.phpunit.outcome == 'success'
+      uses: axelerant/platformsh-deploy-action@v1
+      with:
+        project-id: ${{ secrets.PlatformProjectId }}
+        cli-token: ${{ secrets.PlatformCliToken }}
+        ssh-private-key: ${{ secrets.PlatformSshKey }}
+        php-version: 8.1
+        force-push: true
