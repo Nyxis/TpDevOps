@@ -30,6 +30,6 @@ jobs:
         server_port: ${{ secrets.SMTP_PORT }}
         username: ${{ secrets.EMAIL_USER }}
         password: ${{ secrets.EMAIL_PWD }}
-        subject: ${{ steps.phpunit.outcome == 'success' ? 'Build Success' : 'Build Fail' }}
-        body: ${{ steps.phpunit.outcome == 'success' ? 'PHPUnit tests passed successfully.' : 'PHPUnit tests failed!' }}
+        subject: ${{ steps.phpunit > 0 ? 'Build Success' : 'Build Fail' }}
+        body: ${{ steps.phpunit > 0 ? 'PHPUnit tests passed successfully.' : 'PHPUnit tests failed!' }}
         to: ${{ secrets.DEST_EMAIL }}
