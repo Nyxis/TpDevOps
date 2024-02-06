@@ -24,12 +24,14 @@ jobs:
 
     - name: Send email
       if: always()
-      uses: betterfor/action-sned-mail@main
+      uses: betterfor/action-send-mail@main
       with:
         server_address: ${{ secrets.SMTP_SERVER }}
         server_port: ${{ secrets.SMTP_PORT }}
         username: ${{ secrets.EMAIL_USER }}
         password: ${{ secrets.EMAIL_PWD }}
-        subject: ${{ steps.phpunit > 0 ? 'Build Success' : 'Build Fail' }}
-        body: ${{ steps.phpunit > 0 ? 'PHPUnit tests passed successfully.' : 'PHPUnit tests failed!' }}
+        # subject: ${{ steps.phpunit > 0 ? 'Build Success' : 'Build Fail' }}
+        # body: ${{ steps.phpunit > 0 ? 'PHPUnit tests passed successfully.' : 'PHPUnit tests failed!' }}
+        subject: "Test sans conditions"
+        body: "Bonjour tout le monde !"
         to: ${{ secrets.DEST_EMAIL }}
