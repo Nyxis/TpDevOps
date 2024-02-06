@@ -36,3 +36,8 @@ Créez une page public/index.php qui affiche "Hello World" et livrez là dans vo
 
 ### Ex 3 :
 Créez un compte Platform.sh
+
+### Ex 4 :
+Modifiez l'action Github pour permettre de déployer la version testée si le build est en succès, envoyer un email sinon.
+
+
