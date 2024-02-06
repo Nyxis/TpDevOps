@@ -19,7 +19,7 @@ jobs:
       if: steps.phpunit > 0
       uses: tsickert/discord-webhook@v5.3.0
       with:
-        webhook_url:
+        webhook_url: ${{ secrets.DISCORD_URL }}
         message: 'PHPUnit Failed ! Great job!'
 
     - name: Send email
