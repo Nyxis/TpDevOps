@@ -1,0 +1,23 @@
+name: Phpunit Integration
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name : Update composer
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: phpunit
+      id: phpunit
+      run: vendor/bin/phpunit
+
+    - name: Discord notify
+      if: steps.phpunit > 0
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook_url:
+        message: 'PHPUnit Failed ! Great job!'

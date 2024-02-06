@@ -1,0 +1,8 @@
+# IDE and project deps artefacts
+.php_cs.cache
+.vscode
+.idea
+
+# External packages
+vendor/
+node_modules/
