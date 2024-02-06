@@ -33,3 +33,6 @@ web:
     '/':
       root: "public"
       passthru: "/index.php"
+
+relationships:
+  elasticsearch: "elasticsearch:elasticsearch"
