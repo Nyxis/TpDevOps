@@ -29,6 +29,6 @@ jobs:
         server_port: ${{ secrets.SMTP_PORT }}
         username: ${{ secrets.EMAIL_USER }}
         password: ${{ secrets.EMAIL_PWD }}
-        subject: ${{ job.status == 'success' ? 'Build Success' : 'Build Fail' }}
+        subject: ${{ steps.phpunit.outcome }}
         body: ${{ job.status }}
         to: ${{ secrets.DEST_EMAIL }}
