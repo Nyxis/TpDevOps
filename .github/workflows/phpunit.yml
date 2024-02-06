@@ -17,10 +17,9 @@ jobs:
 
     - name: Discord notify
       if: steps.phpunit > 0
-      uses: tsickert/discord-webhook@v5.3.0
+      uses: johnnyhuy/actions-discord-git-webhook@main
       with:
         webhook_url: ${{ secrets.DISCORD_URL }}
-        message: 'PHPUnit Failed ! Great job!'
 
     - name: Send email
       if: always()
