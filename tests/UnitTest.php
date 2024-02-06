@@ -13,7 +13,7 @@ class SumUnitTest extends TestCase
 
     public function testSumPostive()
     {
-        $this->assertEquals($this->sum(1, 4), 6);
+        $this->assertEquals($this->sum(1, 4), 5);
     }
 
     public function testSumNegative()
