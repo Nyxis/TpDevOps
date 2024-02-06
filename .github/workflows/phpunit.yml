@@ -29,8 +29,8 @@ jobs:
         server_port: ${{ secrets.SMTP_PORT }}
         username: ${{ secrets.EMAIL_USER }}
         password: ${{ secrets.EMAIL_PWD }}
-        subject: ${{ jobs.status }}
-        body: ${{ jobs.status }}
+        subject: ${{ job.status }}
+        body: ${{ job.status }}
         subject: "Test sans conditions"
         body: "Bonjour tout le monde !"
         to: ${{ secrets.DEST_EMAIL }}
