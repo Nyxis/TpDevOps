@@ -21,3 +21,15 @@ jobs:
       with:
         webhook_url:
         message: 'PHPUnit Failed ! Great job!'
+
+    - name: Send email
+      if: always()
+      uses: betterfor/action-sned-mail@main
+      with:
+        server_address: ${{ secrets.SMTP_SERVER }}
+        server_port: ${{ secrets.SMTP_PORT }}
+        username: ${{ secrets.EMAIL_USER }}
+        password: ${{ secrets.EMAIL_PWD }}
+        subject: ${{ steps.phpunit.outcome == 'success' ? 'Build Success' : 'Build Fail' }}
+        body: ${{ steps.phpunit.outcome == 'success' ? 'PHPUnit tests passed successfully.' : 'PHPUnit tests failed!' }}
+        to: ${{ secrets.DEST_EMAIL }}
