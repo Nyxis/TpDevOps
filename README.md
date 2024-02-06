@@ -22,3 +22,17 @@ make
 make test
 ```
 
+## TP
+
+### Ex0 :
+Faites un fork du projet.
+
+### Ex1 :
+Dans votre fork, modifiez le build phpunit pour qu'à chaque build qui réussi, github vous envoie un email qui contient en objet "Build Success".
+Si le build fail, envoyer "Build Fail".
+
+### Ex2 :
+Créez une page public/index.php qui affiche "Hello World" et livrez là dans votre projet.
+
+### Ex 3 :
+Créez un compte Platform.sh
