@@ -31,6 +31,4 @@ jobs:
         password: ${{ secrets.EMAIL_PWD }}
         subject: ${{ job.status }}
         body: ${{ job.status }}
-        subject: "Test sans conditions"
-        body: "Bonjour tout le monde !"
         to: ${{ secrets.DEST_EMAIL }}
