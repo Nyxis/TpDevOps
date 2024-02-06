@@ -42,3 +42,4 @@ jobs:
         ssh-private-key: ${{ secrets.PlatformSshKey }}
         php-version: 8.1
         force-push: true
+        environment-name: "Main"
