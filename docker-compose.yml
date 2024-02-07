@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  # apache
+  web:
+    build: ./.docker/apache
+    ports:
+      - "81:80"
+    volumes:
+      - ./:/var/www/html/:ro
+      - ./.docker/apache/sites-available:/etc/apache2/sites-available
+    networks:
+      default:
+        aliases:
+            - web
+
+  # elastic
+  # logstash
+  # kibana
