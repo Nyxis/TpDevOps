@@ -1,5 +1,11 @@
 {
     "require-dev": {
         "phpunit/phpunit": "^10.4"
+    },
+    "require": {
+        "maxbanton/cwh": "*",
+        "monolog/monolog": "^2.9",
+        "graylog2/gelf-php": "^2.0",
+        "phpmailer/phpmailer": "^6.9"
     }
 }
